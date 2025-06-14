@@ -62,7 +62,7 @@ class syntax_plugin_nslist extends DokuWiki_Syntax_Plugin {
             'dsort' => 1
         );
 
-        list($ns,$params) = explode(' ',$match,2);
+        list($ns, $params) = array_pad(explode(' ', trim($match), 2), 2, '');
         $ns = cleanID($ns);
 
         if(preg_match('/\bnodate\b/i',$params))  $conf['date'] = 0;
